@@ -2,10 +2,43 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    
+    <!-- NuGet Package Properties -->
+    <PackageId>Zircon.AspNetCore.Endpoints</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Adam Paquette</Authors>
+    <Company>AppStackOne</Company>
+    <Product>Zircon.AspNetCore.Endpoints</Product>
+    <Description>A lightweight library for organizing ASP.NET Core Minimal APIs using a vertical slice architecture pattern. Each endpoint is self-contained with its own routing, handling logic, and dependency registration.</Description>
+    <Copyright>Copyright © 2025</Copyright>
+    <PackageProjectUrl>https://github.com/adampaquette/Zircon</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/adampaquette/Zircon</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>aspnetcore;minimalapi;endpoints;vertical-slice;architecture;webapi;rest;api</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageReleaseNotes>
+      Initial release of Zircon.AspNetCore.Endpoints
+      - Vertical slice architecture support for Minimal APIs
+      - Auto-discovery of endpoints from assemblies
+      - Per-endpoint dependency injection
+      - Clean separation of concerns
+    </PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
