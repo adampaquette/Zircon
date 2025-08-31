@@ -1,9 +1,34 @@
-﻿<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
 <Project>
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Common NuGet Package Properties -->
+    <Authors>Adam Paquette</Authors>
+    <Company>AppStackOne</Company>
+    <Copyright>Copyright © 2025</Copyright>
+    <PackageProjectUrl>https://github.com/adampaquette/Zircon</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/adampaquette/Zircon</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    
+    <!-- Build Properties -->
+    <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn> <!-- Suppress missing XML comment warnings for now -->
+    
+    <!-- Package Icon (optional - only set if file exists) -->
+    
+    <!-- Versioning -->
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
+  
+  <!-- Include Package Icon if it exists -->
+  <ItemGroup Condition="Exists('$(MSBuildProjectDirectory)\icon.png')">
+    <None Include="$(MSBuildProjectDirectory)\icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
 </Project>
