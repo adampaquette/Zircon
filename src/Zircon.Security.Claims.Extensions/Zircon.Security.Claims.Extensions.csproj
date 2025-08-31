@@ -1,3 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <PackageId>Zircon.Security.Claims.Extensions</PackageId>
+    <Description>Extension methods for ClaimsPrincipal providing convenient authentication and authorization utilities for ASP.NET Core applications.</Description>
+    <PackageTags>claims authentication authorization security aspnetcore dotnet csharp</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
 </Project>

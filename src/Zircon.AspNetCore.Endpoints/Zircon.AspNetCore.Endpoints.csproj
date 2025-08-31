@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IsPackable>true</IsPackable>
     
     <!-- NuGet Package Properties -->
     <PackageId>Zircon.AspNetCore.Endpoints</PackageId>
@@ -21,7 +22,6 @@
     <PackageTags>aspnetcore;minimalapi;endpoints;vertical-slice;architecture;webapi;rest;api</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageReleaseNotes>

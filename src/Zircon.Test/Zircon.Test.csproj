@@ -1,7 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <IsPackable>false</IsPackable>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <PackageId>Zircon.Test</PackageId>
+    <Description>Testing utilities and fixtures for unit testing with AutoFixture and AutoMoq, providing convenient base classes for test setup.</Description>
+    <PackageTags>testing unit-testing autofixture automoq xunit test-utilities dotnet csharp</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +21,10 @@
 
   <ItemGroup>
     <Using Include="Xunit"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>

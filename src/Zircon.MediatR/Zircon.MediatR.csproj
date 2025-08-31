@@ -1,9 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <ItemGroup>
-      <PackageReference Include="FluentValidation" />
-      <PackageReference Include="MediatR" />
-      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
-    </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <PackageId>Zircon.MediatR</PackageId>
+    <Description>MediatR extensions and behaviors including performance metric collection, validation pipeline behaviors, and dependency injection utilities.</Description>
+    <PackageTags>mediatr pipeline-behaviors performance-metrics validation cqrs dotnet csharp</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="MediatR" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
 </Project>

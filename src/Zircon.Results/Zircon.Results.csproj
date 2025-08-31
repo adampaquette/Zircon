@@ -1,3 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <PackageId>Zircon.Results</PackageId>
+    <Description>A result pattern implementation for C# applications providing a clean way to handle success and failure outcomes with error aggregation and exception handling.</Description>
+    <PackageTags>result-pattern error-handling exception-handling functional-programming csharp dotnet</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
 </Project>
