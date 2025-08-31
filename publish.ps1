@@ -24,8 +24,8 @@ dotnet pack $proj -c Release --no-build -o .\nupkgs
 if ($env:NUGET_API_KEY) {
     Write-Host "Publishing to NuGet.org..." -ForegroundColor Cyan
     dotnet nuget push "nupkgs\$Package.$Version.nupkg" --api-key $env:NUGET_API_KEY --source https://api.nuget.org/v3/index.json
-    Write-Host "✅ Published!" -ForegroundColor Green
+    Write-Host "Published!" -ForegroundColor Green
 } else {
-    Write-Host "`n✅ Package created! To publish, run:" -ForegroundColor Green
+    Write-Host "`Package created! To publish, run:" -ForegroundColor Green
     Write-Host "dotnet nuget push nupkgs\$Package.$Version.nupkg --api-key YOUR_KEY --source https://api.nuget.org/v3/index.json" -ForegroundColor Yellow
 }

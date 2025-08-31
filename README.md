@@ -207,7 +207,7 @@ https://github.com/adampaquette/Zircon/issues
 $env:NUGET_API_KEY = "your-key-here"
 
 # Publish a package
-.\publish.ps1 -Package Zircon.Results -Version 1.0.1
+.\publish.ps1 -Package Zircon.Test -Version 1.0.0
 ```
 
 Get your API key from: https://www.nuget.org/account/apikeys

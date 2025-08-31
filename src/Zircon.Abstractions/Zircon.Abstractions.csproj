@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
+    <Version>1.0.0</Version>
     <IsPackable>true</IsPackable>
     <PackageId>Zircon.Abstractions</PackageId>
     <Description>Core abstractions for domain-driven design including auditable entities, domain events, and soft delete interfaces for Zircon applications.</Description>
