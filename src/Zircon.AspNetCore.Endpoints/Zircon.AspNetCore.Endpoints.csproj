@@ -5,7 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <IsPackable>true</IsPackable>
     <PackageId>Zircon.AspNetCore.Endpoints</PackageId>
-    <Version>1.0.0</Version>
+    
     <Description>A lightweight library for organizing ASP.NET Core Minimal APIs using a vertical slice architecture pattern. Each endpoint is self-contained with its own routing, handling logic, and dependency registration.</Description>
     <PackageTags>aspnetcore;minimalapi;endpoints;vertical-slice;architecture;webapi;rest;api</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
