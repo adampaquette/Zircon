@@ -1,8 +1,9 @@
 ﻿using System.Text.Json;
+using System.Text.Json.Nodes;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Zircon.OpenApi.Swashbuckle.OperationFilters;
@@ -26,21 +27,31 @@ internal sealed class ParameterDefaultValueFilter(ILogger<ParameterDefaultValueF
 
         foreach (var parameter in operation.Parameters)
         {
+            if (parameter is not OpenApiParameter concreteParameter)
+            {
+                continue;
+            }
+
             var description = context.ApiDescription.ParameterDescriptions
-                .FirstOrDefault(p => p.Name == parameter.Name);
+                .FirstOrDefault(p => p.Name == concreteParameter.Name);
 
             if (description == null)
             {
                 continue;
             }
 
-            UpdateParameterDefaultValue(parameter, description);
+            UpdateParameterDefaultValue(concreteParameter, description);
         }
     }
 
     private void UpdateParameterDefaultValue(OpenApiParameter parameter, ApiParameterDescription description)
     {
-        if (parameter.Schema.Default != null ||
+        if (parameter.Schema is not OpenApiSchema concreteSchema)
+        {
+            return;
+        }
+
+        if (concreteSchema.Default != null ||
             description.DefaultValue == null ||
             description.DefaultValue is DBNull ||
             description.ModelMetadata is not ModelMetadata modelMetadata)
@@ -51,7 +62,7 @@ internal sealed class ParameterDefaultValueFilter(ILogger<ParameterDefaultValueF
         try
         {
             var json = JsonSerializer.Serialize(description.DefaultValue, modelMetadata.ModelType);
-            parameter.Schema.Default = OpenApiAnyFactory.CreateFromJson(json);
+            concreteSchema.Default = JsonNode.Parse(json);
         }
         catch (JsonException ex)
         {

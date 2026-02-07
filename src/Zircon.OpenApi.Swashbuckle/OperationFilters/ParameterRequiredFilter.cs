@@ -1,4 +1,4 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.OpenApi;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Zircon.OpenApi.Swashbuckle.OperationFilters;
@@ -20,12 +20,17 @@ internal sealed class ParameterRequiredFilter : IOperationFilter
 
         foreach (var parameter in operation.Parameters)
         {
+            if (parameter is not OpenApiParameter concreteParameter)
+            {
+                continue;
+            }
+
             var description = context.ApiDescription.ParameterDescriptions
-                .FirstOrDefault(p => p.Name == parameter.Name);
+                .FirstOrDefault(p => p.Name == concreteParameter.Name);
 
             if (description != null)
             {
-                parameter.Required |= description.IsRequired;
+                concreteParameter.Required |= description.IsRequired;
             }
         }
     }

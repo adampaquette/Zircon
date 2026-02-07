@@ -3,7 +3,7 @@
     <!-- Common NuGet Package Properties -->
     <Authors>Adam Paquette</Authors>
     <Company>AppStackOne</Company>
-    <Copyright>Copyright © 2025</Copyright>
+    <Copyright>Copyright © 2026</Copyright>
     <PackageProjectUrl>https://github.com/adampaquette/Zircon</PackageProjectUrl>
     <RepositoryUrl>https://github.com/adampaquette/Zircon</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

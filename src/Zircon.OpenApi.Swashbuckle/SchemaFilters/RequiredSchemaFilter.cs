@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using System.Text.Json.Serialization;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Zircon.OpenApi.Swashbuckle.SchemaFilters;
@@ -10,12 +10,17 @@ namespace Zircon.OpenApi.Swashbuckle.SchemaFilters;
 /// </summary>
 public sealed class RequiredSchemaFilter : ISchemaFilter
 {
-    public void Apply(OpenApiSchema schema, SchemaFilterContext context)
+    public void Apply(IOpenApiSchema schema, SchemaFilterContext context)
     {
         ArgumentNullException.ThrowIfNull(schema);
         ArgumentNullException.ThrowIfNull(context);
 
-        if (context.Type == null || !schema.Properties.Any())
+        if (schema is not OpenApiSchema concreteSchema)
+        {
+            return;
+        }
+
+        if (context.Type == null || concreteSchema.Properties == null || !concreteSchema.Properties.Any())
         {
             return;
         }
@@ -26,10 +31,10 @@ public sealed class RequiredSchemaFilter : ISchemaFilter
 
         foreach (var propertyName in requiredProperties)
         {
-            if (schema.Properties.ContainsKey(propertyName))
+            if (concreteSchema.Properties.ContainsKey(propertyName))
             {
-                schema.Required ??= new HashSet<string>();
-                schema.Required.Add(propertyName);
+                concreteSchema.Required ??= new HashSet<string>();
+                concreteSchema.Required.Add(propertyName);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.OpenApi;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Zircon.OpenApi.Swashbuckle.OperationFilters;
@@ -18,6 +18,11 @@ internal sealed class ResponseContentTypeFilter : IOperationFilter
             var responseKey = responseType.IsDefaultResponse ? "default" : responseType.StatusCode.ToString();
 
             if (!operation.Responses.TryGetValue(responseKey, out var response))
+            {
+                continue;
+            }
+
+            if (response.Content == null)
             {
                 continue;
             }

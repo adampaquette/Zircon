@@ -1,5 +1,5 @@
-﻿using Microsoft.OpenApi.Any;
-using Microsoft.OpenApi.Models;
+﻿using System.Text.Json.Nodes;
+using Microsoft.OpenApi;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Zircon.OpenApi.Swashbuckle.SchemaFilters;
@@ -9,7 +9,7 @@ namespace Zircon.OpenApi.Swashbuckle.SchemaFilters;
 /// </summary>
 public sealed class EnumSchemaFilter : ISchemaFilter
 {
-    public void Apply(OpenApiSchema schema, SchemaFilterContext context)
+    public void Apply(IOpenApiSchema schema, SchemaFilterContext context)
     {
         ArgumentNullException.ThrowIfNull(schema);
         ArgumentNullException.ThrowIfNull(context);
@@ -19,14 +19,19 @@ public sealed class EnumSchemaFilter : ISchemaFilter
             return;
         }
 
-        schema.Enum.Clear();
-        schema.Type = "string";
-        schema.Format = null;
+        if (schema is not OpenApiSchema concreteSchema)
+        {
+            return;
+        }
+
+        concreteSchema.Enum?.Clear();
+        concreteSchema.Type = JsonSchemaType.String;
+        concreteSchema.Format = null;
 
         var enumNames = Enum.GetNames(context.Type);
         foreach (var name in enumNames)
         {
-            schema.Enum.Add(new OpenApiString(name));
+            concreteSchema.Enum?.Add(JsonValue.Create(name));
         }
     }
 }
