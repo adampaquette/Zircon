@@ -9,6 +9,12 @@ The Zircon library collection provides a comprehensive set of utilities and patt
 
 ## Available Packages
 
+### ASP.NET Core
+
+| Package | NuGet | Description |
+|---------|-------|-------------|
+| **Zircon.AspNetCore.Endpoints** | [![NuGet](https://img.shields.io/nuget/v/Zircon.AspNetCore.Endpoints.svg)](https://www.nuget.org/packages/Zircon.AspNetCore.Endpoints) | Vertical slice architecture for ASP.NET Core Minimal APIs |
+
 ### Core Packages
 
 | Package | NuGet | Description |
@@ -18,21 +24,20 @@ The Zircon library collection provides a comprehensive set of utilities and patt
 | **Zircon.Configuration** | [![NuGet](https://img.shields.io/nuget/v/Zircon.Configuration.svg)](https://www.nuget.org/packages/Zircon.Configuration) | Enhanced configuration extensions with required value validation |
 | **Zircon.Security.Claims.Extensions** | [![NuGet](https://img.shields.io/nuget/v/Zircon.Security.Claims.Extensions.svg)](https://www.nuget.org/packages/Zircon.Security.Claims.Extensions) | ClaimsPrincipal authentication utilities |
 
+### Infrastructure
+
+| Package | NuGet | Description |
+|---------|-------|-------------|
+| **Zircon.MediatR** | [![NuGet](https://img.shields.io/nuget/v/Zircon.MediatR.svg)](https://www.nuget.org/packages/Zircon.MediatR) | MediatR pipeline behaviors with performance monitoring |
+| **Zircon.Serialization** | [![NuGet](https://img.shields.io/nuget/v/Zircon.Serialization.svg)](https://www.nuget.org/packages/Zircon.Serialization) | JSON converters for System.Text.Json |
+| **Zircon.IO** | [![NuGet](https://img.shields.io/nuget/v/Zircon.IO.svg)](https://www.nuget.org/packages/Zircon.IO) | Stream extension methods for async I/O operations |
+| **Zircon.Diagnostics** | [![NuGet](https://img.shields.io/nuget/v/Zircon.Diagnostics.svg)](https://www.nuget.org/packages/Zircon.Diagnostics) | OpenTelemetry activity extensions for exception tracking |
+
 ### Development & Testing
 
 | Package | NuGet | Description |
 |---------|-------|-------------|
 | **Zircon.Test** | [![NuGet](https://img.shields.io/nuget/v/Zircon.Test.svg)](https://www.nuget.org/packages/Zircon.Test) | Testing utilities with AutoFixture and AutoMoq integration |
-| **Zircon.Diagnostics** | [![NuGet](https://img.shields.io/nuget/v/Zircon.Diagnostics.svg)](https://www.nuget.org/packages/Zircon.Diagnostics) | OpenTelemetry activity extensions for exception tracking |
-
-### Infrastructure
-
-| Package | NuGet | Description |
-|---------|-------|-------------|
-| **Zircon.IO** | [![NuGet](https://img.shields.io/nuget/v/Zircon.IO.svg)](https://www.nuget.org/packages/Zircon.IO) | Stream extension methods for async I/O operations |
-| **Zircon.Serialization** | [![NuGet](https://img.shields.io/nuget/v/Zircon.Serialization.svg)](https://www.nuget.org/packages/Zircon.Serialization) | JSON converters for System.Text.Json |
-| **Zircon.MediatR** | [![NuGet](https://img.shields.io/nuget/v/Zircon.MediatR.svg)](https://www.nuget.org/packages/Zircon.MediatR) | MediatR pipeline behaviors with performance monitoring |
-| **Zircon.AspNetCore.Endpoints** | [![NuGet](https://img.shields.io/nuget/v/Zircon.AspNetCore.Endpoints.svg)](https://www.nuget.org/packages/Zircon.AspNetCore.Endpoints) | Vertical slice architecture for ASP.NET Core Minimal APIs |
 
 ## Installation
 
