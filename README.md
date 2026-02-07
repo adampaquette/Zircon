@@ -61,6 +61,31 @@ Install-Package Zircon.Configuration
 
 ## Quick Start Examples
 
+### Minimal API Endpoints (Zircon.AspNetCore.Endpoints)
+
+```csharp
+// Define an endpoint
+public class GetProductEndpoint : IEndpoint
+{
+    public RouteHandlerBuilder MapEndpoint(IEndpointRouteBuilder builder)
+    {
+        return builder.MapGet("/api/products/{id}", GetProduct)
+            .WithName("GetProduct")
+            .WithTags("Products");
+    }
+
+    private static async Task<IResult> GetProduct(int id, ProductDbContext db)
+    {
+        var product = await db.Products.FindAsync(id);
+        return product is not null ? Results.Ok(product) : Results.NotFound();
+    }
+}
+
+// Program.cs
+builder.Services.AddEndpointsFromAssemblyContaining<Program>();
+app.MapEndpoints();
+```
+
 ### Result Pattern (Zircon.Results)
 
 ```csharp
