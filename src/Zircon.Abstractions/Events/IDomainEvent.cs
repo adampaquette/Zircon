@@ -1,11 +1,11 @@
-using MediatR;
+using Mediator;
 
 namespace Zircon.Abstractions.Events;
 
 /// <summary>
 /// Represents a domain event that captures something meaningful that has occurred within the domain.
 /// Domain events are immutable and represent past occurrences.
-/// Implements INotification to leverage MediatR's publish-subscribe capabilities.
+/// Implements INotification to leverage Mediator's publish-subscribe capabilities.
 /// </summary>
 public interface IDomainEvent : INotification
 {
