@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -8,7 +8,6 @@
     <Description>JSON serialization utilities and converters for System.Text.Json including custom decimal converters with culture-aware parsing.</Description>
     <PackageTags>serialization json system-text-json converters decimal culture-aware dotnet csharp</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

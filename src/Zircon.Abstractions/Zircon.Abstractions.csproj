@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -8,7 +8,6 @@
     <Description>Core abstractions for domain-driven design including auditable entities, domain events, and soft delete interfaces for Zircon applications.</Description>
     <PackageTags>ddd domain-driven-design entities events abstractions csharp dotnet</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
