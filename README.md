@@ -28,7 +28,9 @@ The Zircon library collection provides a comprehensive set of utilities and patt
 
 | Package | NuGet | Description |
 |---------|-------|-------------|
-| **Zircon.MediatR** | [![NuGet](https://img.shields.io/nuget/v/Zircon.MediatR.svg)](https://www.nuget.org/packages/Zircon.MediatR) | MediatR pipeline behaviors with performance monitoring |
+| **Zircon.Mediator** | [![NuGet](https://img.shields.io/nuget/v/Zircon.MediatR.svg)](https://www.nuget.org/packages/Zircon.MediatR) | Mediator pipeline behaviors with performance monitoring (martinothamar/Mediator) |
+| **Zircon.AspNetCore.Mediator** | — | ASP.NET Core Mediator integration with FluentValidation pipeline behaviors |
+| **Zircon.EntityFramework.Migrations** | — | EF Core auto-migration hosted service |
 | **Zircon.Serialization** | [![NuGet](https://img.shields.io/nuget/v/Zircon.Serialization.svg)](https://www.nuget.org/packages/Zircon.Serialization) | JSON converters for System.Text.Json |
 | **Zircon.IO** | [![NuGet](https://img.shields.io/nuget/v/Zircon.IO.svg)](https://www.nuget.org/packages/Zircon.IO) | Stream extension methods for async I/O operations |
 | **Zircon.Diagnostics** | [![NuGet](https://img.shields.io/nuget/v/Zircon.Diagnostics.svg)](https://www.nuget.org/packages/Zircon.Diagnostics) | OpenTelemetry activity extensions for exception tracking |
@@ -161,6 +163,11 @@ For issues, feature requests, or questions, please visit:
 https://github.com/adampaquette/Zircon/issues
 
 ## Version History
+
+### Version 2.0.0
+- Migrated from MediatR to martinothamar/Mediator (MIT, source-generated, AOT-compatible)
+- Cleaned up Directory.Packages.props to only include Zircon-specific dependencies
+- Removed legacy deps (itext7 AGPL, Semantic Kernel, Azure/Blazor/Kiota packages)
 
 ### Version 1.1.0
 - Upgrade to .NET 10
